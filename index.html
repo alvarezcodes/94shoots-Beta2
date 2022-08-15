@@ -9,10 +9,23 @@
     <script src="./js/main.js" defer></script>
 </head>
 <body>
+    <div class="overlay-show" id="overlay-show"></div>
+
+    <div id="mobile-menu" class="mobile-main-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Auto</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="portraits.html">Portraits</a></li>
+            <li><a href="#">Social</a></li>
+        </ul>
+    </div>
+
     <header class="main-header">
         <div class="logo">
             <a href="index.html">
-                <img src="./images/camera_logo.png" alt="94shoots">94Shoots
+                <img src="./images/camera_logo.png" alt="94shoots">
+                <p>94Shoots</p>
             </a>
         </div>
 
@@ -28,23 +41,27 @@
         </nav>
     </header>
 
+
+
     <!-- HAMBURGER MENU -->
-    <!-- <button id="menu-btn" class="hamburger" type="button">
+    <button id="menu-btn" class="hamburger" type="button">
         <span class="hamburger-top"></span>
         <span class="hamburger-middle"></span>
         <span class="hamburger-bottom"></span>
-    </button> -->
+    </button>
+
+
 
 
     <!-- SECTION A-->
-    <div class="overlay-show"></div>
+
 
     <section class="section-a">
         <div class="section-inner">
-            <h2>Auto</h2>
-            <h2>People</h2>
-            <h2>Portraits</h2>
-            <h2>Wallpapers</h2>
+            <h2><a href="cars.html">Auto</a></h2>
+            <h2><a href="people.html">People</a></h2>
+            <h2><a href="portraits.html">Portraits</a></h2>
+            <h2><a href="#">Wallpapers</a></h2>
 
             <!-- BUTTON -->
             <a href="#" class="btn">
@@ -98,14 +115,18 @@
             </a>
         </div>
 
-        <div class="scroll-arrow">
-            <svg width="30px" height="20px">
-                <path stroke="#ffffff" fill="none" stroke-width="2px" d="M2.00,5.00 L15.000,18.00 L28.00,5.00">
-
-                </path>
-            </svg>
-        </div>
     </section>
+
+
+    <footer>
+        <ul>
+            <li>AlvarezCodes &copy; 2022</li>
+            <li><a href="cars.html">Auto</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="portraits.html">Portraits</a></li>
+            <li><a href="#">Social</a></li>
+        </ul>
+    </footer>
 
 
 </body>
