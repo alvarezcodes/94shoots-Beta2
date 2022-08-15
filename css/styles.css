@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap');
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Familjen Grotesk', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ul{
+    list-style: none;
+}
+
+/* HEADER / NAVBAR */
+
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    height: 100px;
+    padding: 0 30px;
+}
+
+/* LOGO */
+.logo{
+    width: 250px;
+    height: auto;
+}
+
+.logo a{
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    display: block;
+    width: 30%;
+    height: auto;
+}
+
+
+/* DESKTOP MENU */
+.desktop-main-menu{
+    margin-right: 50px;
+}
+
+.desktop-main-menu ul li a{
+    font-size: 24px;
+}
+
+.desktop-main-menu ul{
+    display: flex;
+}
+
+.desktop-main-menu ul li{
+    position: relative;
+    margin-right: 20px;
+    /* bottom padding for the line animation when we hover */
+    padding-bottom: 2px;
+}
+
+
+/* MENU ITEM BOTTOM BORDER */
+/* NOTE- need to use ::before and ::after and use empty content to create a ghost element we can style */
+.desktop-main-menu ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+
+    /* scaleX(0) makes the line disappear */
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.19,1,0.22,1);
+    transform-origin: right center;
+}
+
+.desktop-main-menu ul li a:hover::after{
+    /* scalex(1) makes the underline reappear again */
+    transform: scaleX(1);
+    /* transform-origin: left center; */
+    transition-duration: 0.6s;
+    transform-origin: left center;
+}
+
+
+/* BACKGROUND IMAGES */
+.section-a{
+    background-image: url(../images/main.jpg);
+}
+
+.cars-section-a{
+    background-image: url(../images/E1jyF09WQAIX7bG.jpg);
+}
+
+.people-section-a{
+    background-image: url(../images/Brianm3_1549.jpg);
+}
+
+.portraits-section-a{
+    background-image: url(../images/_NKN5445.jpg);
+}
+
+.section-b{
+    background-image: url(../images/Brianm3_1047.jpg);
+}
+
+.section-c{
+    background-image: url(../images/Cars\ n\ Coffee\ Lexus_596-2.jpg);
+}
+
+
+
+/* SECTIONS */
+section{
+    position: relative;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+.section-inner{
+    position: absolute;
+    bottom: 250px;
+    right: 200px;
+    max-width: 560px;
+    color: #fff;
+    z-index: 2;
+}
+
+.section-inner h2{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 5px;
+
+    /* ANIMATION */
+    /* Add an extra delay */
+    animation: fadeInUp 0.9s ease-in-out 0.4s;
+
+    /* stop from showing at the start of the animation. We want a true fade in */
+    animation-fill-mode: both;
+}
+
+.section-inner a{
+    /* animation */
+    /* add a extra delay for this element so it doesnt show exactly with the h4 */
+    animation: fadeInUp 0.9s ease-in-out 0.7s;
+
+    /* stop text from showing at the start of the animation */
+    animation-fill-mode: both;
+
+    z-index: 2;
+}
+
+
+
+
+
+
+
+/* BUTTON */
+.btn{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    min-width: 130px;
+    padding: 15px 50px;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.btn:hover span{
+    color: #000;
+}
+
+/* this is the hover fill effect on the button */
+.btn .hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+    z-index: -1;   /* we want the text above the hover color effect */
+
+    /* hover effect pushed DOWN 100% by default*/
+    transform: translateY(100%);
+
+    transition: transform 0.8s cubic-bezier(0.19,1,0.22,1);
+}
+
+.btn:hover .hover{
+    transform: translateY(0);
+}
+
+
+/* SCROLL ARROW */
+.scroll-arrow{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+
+    animation: fadeBounce 3s infinite;
+}
+
+.scroll-arrow p{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* OVERLAY */
+.overlay-show{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index:1;
+    transition: all 0.4s;
+}
+
+
+
+/* ANIMATION */
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(140px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeBounce{
+    0%,
+    20%,
+    50%,
+    80%,
+    100%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    40%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
